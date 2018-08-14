@@ -36,7 +36,7 @@ import { DetailsComponent } from './details/details.component';
     //end. declare components for using ng-bootstrap
     PostsComponent,
     UsersComponent,
-    DetailsComponent
+    DetailsComponent,
   ],
   imports: [
     BrowserModule,

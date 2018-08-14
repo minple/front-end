@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { DataService } from '../data.service';
 import { Observable } from 'rxjs';
+import { Address } from '../DTO/address';
 
 @Component({
   selector: 'app-users',
@@ -16,7 +17,11 @@ export class UsersComponent implements OnInit {
 
   ngOnInit() {
     this.data.getUsers().subscribe(
-      data => this.users = data
+      data => {
+        this.users = data;
+      },
+      err => console.error(err),
+      () => console.log('ket thuc')
     );
   }
 
