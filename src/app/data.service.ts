@@ -8,13 +8,18 @@ import { Observable } from 'rxjs';
 })
 export class DataService {
 
-  private apiString: string = "https://jsonplaceholder.typicode.com/users";
+  private apiUsers: string = "https://jsonplaceholder.typicode.com/users";
+  private apiPosts: string = "https://jsonplaceholder.typicode.com/posts";
   constructor(private http: HttpClient) { }
 
   getUsers() {
-    return this.http.get(this.apiString);
+    return this.http.get(this.apiUsers);
   }
   getUser( userId): Observable<user> {
-    return this.http.get<user>(this.apiString + "/" + userId);
+    return this.http.get<user>(this.apiUsers + "/" + userId);
+  }
+
+  getPosts() {
+    return this.http.get(this.apiPosts);
   }
 }

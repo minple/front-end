@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  isBit: boolean;
+  count: number = 0;
+
+  constructor(private router: Router) {
+    
+    console.log("Construction created for sidebar");
+   }
 
   ngOnInit() {
   }
