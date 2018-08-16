@@ -2,11 +2,14 @@
 
 <ul>
   <li *ngFor="let user of users">
-    <a routerLink="/details/{{user.id}}">{{ user.name }}</a>
-
     <ul>
-      <li>{{ user.name }}</li>
-      <li><a href="http://{{ user.link }}">{{ user.link }}</a></li>
+      <li><img src="{{ user.avatar_urls['96'] }}"></li>
+      
+      <li>
+        <h4><a routerLink="/users/{{user.id}}">{{ user.name }}</a></h4>
+        <p>Role: {{ user.slug }}</p>
+        <a href="http://{{ user.link }}">{{ user.link }}</a>
+      </li>
     </ul>
   </li>
 </ul>

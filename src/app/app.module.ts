@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'
 
 //add module for using get, post, put, delete
 import { HttpClientModule } from '@angular/common/http';
@@ -21,7 +22,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { PostsComponent } from './posts/posts.component';
 import { UsersComponent } from './users/users.component';
-import { DetailsComponent } from './details/details.component';
+import { DetailsComponent } from './users/user-details/user-details.component';
+import { PostDetailsComponent } from './posts/post-details/post-details.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { DetailsComponent } from './details/details.component';
     PostsComponent,
     UsersComponent,
     DetailsComponent,
+    PostDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,8 @@ import { DetailsComponent } from './details/details.component';
     NgbAlertModule,
     //end. import module component for using ng-bootstrap
     //import module for using get, post, put, delete
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
 
   ],
   providers: [],

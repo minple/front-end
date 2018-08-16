@@ -3,9 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 //add components to route
 import { UsersComponent } from './users/users.component';
-import { DetailsComponent } from './details/details.component';
+import { DetailsComponent } from './users/user-details/user-details.component';
 import { PostsComponent } from './posts/posts.component';
 import { MainComponent } from './main/main.component';
+import { PostDetailsComponent } from './posts/post-details/post-details.component';
 
 const routes: Routes = [
   {
@@ -13,16 +14,20 @@ const routes: Routes = [
     component: MainComponent
   },
   {
-    path: 'user',
+    path: 'users',
     component: UsersComponent
   },
   {
-    path: 'details/:id',
+    path: 'users/:id',
     component: DetailsComponent
   },
   {
     path: 'posts',
     component: PostsComponent
+  },
+  {
+    path: 'posts/:id',
+    component: PostDetailsComponent
   }
 ];
 

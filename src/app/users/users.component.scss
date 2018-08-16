@@ -1,0 +1,12 @@
+ul {
+    ul {
+        display: grid;
+        grid-template-columns: 8.8% auto;
+
+        li {
+            p {
+                margin: 0;
+            }
+        }
+    }
+}

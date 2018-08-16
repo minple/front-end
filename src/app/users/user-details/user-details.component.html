@@ -1,0 +1,12 @@
+<h1>{{ user.name | uppercase }}</h1>
+<input [(ngModel)]="user.name" placeholder="name">
+
+<ul>
+  <li><img src="{{ user.avatar_urls['96'] }}"></li>
+  <li><strong>Username: </strong>{{ user.slug }}</li>
+  <li>Website: <a href="{{ user.url }}">{{ user.url }}</a></li>
+  <li>Description: {{ user.description }}</li>
+</ul>
+
+<p *ngFor="let x of one.asd">{{ x }}</p>
+{{ oneasas }}

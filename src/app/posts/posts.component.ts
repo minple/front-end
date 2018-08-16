@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service'
 import { Observable } from 'rxjs';
-import { HtmlParser } from '@angular/compiler';
+import { Post } from '../DTO/post';
+
 
 @Component({
   selector: 'app-posts',
@@ -10,23 +11,20 @@ import { HtmlParser } from '@angular/compiler';
 })
 export class PostsComponent implements OnInit {
 
-  posts: object;
+  posts: Array<Post>;
 
   constructor(private data: DataService) {
-    console.log("Constructor");
-    this.data.getPosts().subscribe(
-      data => {
-        this.posts = data as HTMLBodyElement;
-        console.log(data);
-      },
-      err => console.log(err),
-      () => console.log("end get posts")
-    );
-    console.log("end constructor");
+    console.log("posts component: constructor: html tags is created");
    }
 
   ngOnInit() {
-    console.log("ngOnInit");
+    console.log('posts component: ngOnInit: end for geting data of posts');
+    this.data.getPosts().subscribe(
+      data => {
+        this.posts = data;
+      },
+      err => console.log(err)
+    );
   }
 
 }

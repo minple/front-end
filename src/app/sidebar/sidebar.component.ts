@@ -11,10 +11,7 @@ export class SidebarComponent implements OnInit {
   isBit: boolean;
   count: number = 0;
 
-  constructor(private router: Router) {
-    
-    console.log("Construction created for sidebar");
-   }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }

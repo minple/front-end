@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Observable } from 'rxjs';
 import { Address } from '../DTO/address';
+import { User } from '../DTO/user';
 
 @Component({
   selector: 'app-users',
@@ -11,10 +12,10 @@ import { Address } from '../DTO/address';
 })
 export class UsersComponent implements OnInit {
 
-  users: object;
+  users: User[];
 
   constructor(private data: DataService) { 
-    console.log("component is created");
+    console.log("users component: constructor: html tags is created");
   }
 
   ngOnInit() {
@@ -23,7 +24,7 @@ export class UsersComponent implements OnInit {
         this.users = data;
       },
       err => console.error(err),
-      () => console.log('ket thuc')
+      () => console.log('users component: ngOnInit: end for geting data of users')
     );
   }
 

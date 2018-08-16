@@ -13,11 +13,12 @@
         "sourceMapPathOverrides": {  
             "webpack:///./*": "${workspaceRoot}/*"  
         },
-        "skipFiles": [
+        "s6ipFiles": [
             "*.js",
             "node_modules/*",
             "node_modules/**/**/**/**/*.js",
             "node_modules/**/**/**/*.js",
+            "node_modules/**/**/**/core.js",
             "<node_internals>/**/*.js"
         ]
     }]
