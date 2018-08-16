@@ -11,7 +11,7 @@ import { Address } from '../DTO/address';
 })
 export class UsersComponent implements OnInit {
 
-  users: Object;
+  users: object;
 
   constructor(private data: DataService) { 
     console.log("component is created");

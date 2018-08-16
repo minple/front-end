@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class DataService {
 
-  private apiUsers: string = "https://jsonplaceholder.typicode.com/users";
-  private apiPosts: string = "https://jsonplaceholder.typicode.com/posts";
+  private apiUsers: string = "https://ubunsys.com/wp-json/wp/v2/users";
+  private apiPosts: string = "https://ubunsys.com/wp-json/wp/v2/posts";
   constructor(private http: HttpClient) { }
 
   getUsers() {

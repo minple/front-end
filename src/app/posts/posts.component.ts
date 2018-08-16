@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service'
 import { Observable } from 'rxjs';
+import { HtmlParser } from '@angular/compiler';
 
 @Component({
   selector: 'app-posts',
@@ -9,13 +10,13 @@ import { Observable } from 'rxjs';
 })
 export class PostsComponent implements OnInit {
 
-  posts: Object;
+  posts: object;
 
   constructor(private data: DataService) {
     console.log("Constructor");
     this.data.getPosts().subscribe(
       data => {
-        this.posts = data;
+        this.posts = data as HTMLBodyElement;
         console.log(data);
       },
       err => console.log(err),

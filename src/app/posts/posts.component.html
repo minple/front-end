@@ -2,7 +2,7 @@
 
 <ul>
   <li *ngFor="let post of posts">
-    <a routerLink="">{{ post.title }}</a>
-    <p>{{ post.body }}</p>
+    <a routerLink="">{{ post.title.rendered }}</a>
+    <div [innerHTML] = "post.excerpt.rendered"></div>
   </li>
 </ul>
