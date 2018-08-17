@@ -1,0 +1,31 @@
+let startFrom = new Date().getTime();
+const map1 = array1.map(x => {
+	return {
+    	id: x['id'],
+        image: x['image'],
+        imageId: x['imageId'],
+        title: x['title'],
+        data: x['data'],
+        excerpt: x['excerpt']
+    }
+});
+
+var one = new Array();
+for(var i = 0; i<array1.length;i++) {
+	one[i] = array1[i];
+}
+
+
+let endTime = new Date().getTime();
+let timess = endTime - startFrom;
+
+console.log(startFrom + "  start time");
+console.log(endTime + "  end time");
+console.log(timess + "  time chenh lech");
+console.log(i);
+
+console.log(map1);
+console.log(array1);
+// expected output: Array [2, 8, 18, 32]
+
+</script>

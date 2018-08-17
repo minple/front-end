@@ -20,7 +20,6 @@ export class PostDetailsComponent implements OnInit {
     console.log("post-details component: constructor: html tags is created");
     this.postId = Number(router.snapshot.paramMap.get("id"));
     //ngOnInit running when the constructor created basic component that have html tags. Because html tag use interpolation with property of Post class, but post object not New so it donot have its properties. So have to new Post() at constructor.
-    this.post = new Post();
   }
 
   ngOnInit() {
@@ -28,13 +27,16 @@ export class PostDetailsComponent implements OnInit {
     //get post details
     let one = this.data.getPost(this.postId);
     let two = one.subscribe(
-      data => {
-        console.log(data);
-        this.post.deserialize(this.post, data);
-        console.log(this.post);
-        //this.postImageId = data.iam
+      (data: Post) => this.post = {
+        id: data['id'],
+        image: data['image'],
+        imageId: data['imageId'],
+        title: data['title'],
+        data: data['data'],
+        excerpt: data['excerpt']
       },
-      err => console.log(err)
+      err => console.log('error anywhere!'),
+    () => console.log(this.post)
     );
 
     //get image link from post details
