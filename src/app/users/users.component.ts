@@ -15,7 +15,7 @@ export class UsersComponent implements OnInit {
   users: User[];
 
   constructor(private data: DataService) { 
-    console.log("users component: constructor: html tags is created");
+    console.log("users component: constructor: html tags is created.");
   }
 
   ngOnInit() {
